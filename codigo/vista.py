@@ -18,7 +18,8 @@ class Ventana:
         self.objeto_base = Abmc()
         self.root = window
         self.root.title("Administración de gimnasio")
-        self.root.geometry("700x500")
+        self.root.geometry("500x403")
+
         self.titulo = Label(
             self.root, text="Nuevo Socio", bg="#6300FF", fg="white", height=1, width=60
         )
@@ -96,7 +97,7 @@ class Ventana:
         self.tree.heading("col3", text="Edad")
         self.tree.heading("col4", text="Peso")
         self.tree.heading("col5", text="Nro. Documento")
-        self.tree.grid(row=10, column=0, columnspan=4)
+        self.tree.grid(row=10, column=0, columnspan=4, sticky="nsew")
         self.objeto_base.actualizar_treeview(self.tree)
         self.tree.bind(
             "<Button-1>", self.SimpleClick
@@ -111,7 +112,7 @@ class Ventana:
         boton_alta = Button(
             self.root,
             text="Agregar",
-            command=lambda: self.objeto_base.alta(  # ARREGLAR
+            command=lambda: self.objeto_base.alta(
                 self.nya_val,
                 self.dni_val,
                 self.fnd_val,
